@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magebit, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var  $block \Magebit\PageListWidget\Block\Widget\PageList */
+?>
+<div>
+    <h3><?= $block->escapeHtml($block->getData('title')) ?></h3>
+    <?php if ($block->getPages()): ?>
+        <ul>
+            <?php foreach ($block->getPages() as $page): ?>
+                <li>
+                    <a href="<?php echo $block->getUrl($page->getIdentifier()); ?>">
+                        <?php echo $page->getTitle(); ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</div>
