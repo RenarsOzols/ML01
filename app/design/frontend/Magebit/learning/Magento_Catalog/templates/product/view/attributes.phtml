@@ -1,0 +1,57 @@
+<?php
+/**
+ * This file is part of the Magebit theme package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit_AmastyFaq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+$_additional = $block->getAdditionalData();
+// Filter out attributes
+$displayedAttributes = ['material', 'colour', 'dimensions'];
+$filteredAdditional = array_filter($_additional, function ($attr) use ($displayedAttributes) {
+    return in_array($attr['code'], $displayedAttributes);
+});
+// Add additional attributes if there are less than length of $displayedAttributes
+if (count($filteredAdditional) < count($displayedAttributes)) {
+    foreach ($_additional as $attr) {
+        if (!in_array($attr, $filteredAdditional)) {
+            $filteredAdditional[] = $attr;
+            if (count($filteredAdditional) >= count($displayedAttributes)) {
+                break;
+            }
+        }
+    }
+}
+?>
+<?php if (!empty($filteredAdditional)) : ?>
+    <div class="additional-attributes-wrapper table-wrapper">
+        <ul class="data table additional-attributes" id="product-attribute-specs-table">
+            <?php foreach ($filteredAdditional as $_data) : ?>
+                <li>
+                    <span class="col label"><?= "{$block->escapeHtml($_data['label'])}: " ?></span>
+                    <span class="col data"><?= /* @noEscape */
+                        $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
