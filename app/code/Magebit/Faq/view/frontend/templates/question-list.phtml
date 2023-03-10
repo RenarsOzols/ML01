@@ -1,0 +1,52 @@
+<?php
+/**
+ * This file is part of the Magebit Faq module package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit_AmastyFaq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
+/**
+ * @var  $block QuestionList
+ */
+
+use Magebit\Faq\Block\QuestionList;
+
+?>
+<div class="faq-wrapper">
+    <h1 class="faq-title"><?= $block->getTitle() ?></h1>
+    <?php if ($block->getQuestions()): ?>
+        <div class="faq-list" id="faq-list">
+            <?php foreach ($block->getQuestions() as $question): ?>
+                <div class="faq-item" data-role="collapsible">
+                    <div class="faq-trigger" data-role="trigger">
+                        <h3 class="faq-question"><?= $question->getQuestion(); ?></h3>
+                    </div>
+                    <div class="faq-content" data-role="content">
+                        <p class="faq-answer"><?= $question->getAnswer(); ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <script>
+            require([
+                'jquery',
+                'accordion'], function ($) {
+                $("#faq-list").accordion();
+            });
+        </script>
+    <?php endif; ?>
+</div>
+

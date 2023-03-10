@@ -807,7 +807,7 @@ class ProductTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * DataProvider for the testSaveWithBackordersEnabled()
+     * QuestionDataProvider for the testSaveWithBackordersEnabled()
      *
      * @return array
      */

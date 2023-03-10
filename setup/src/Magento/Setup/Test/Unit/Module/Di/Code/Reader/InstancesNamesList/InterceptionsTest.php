@@ -162,7 +162,7 @@ class InterceptionsTest extends TestCase
     }
 
     /**
-     * DataProvider for test testGetListException
+     * QuestionDataProvider for test testGetListException
      *
      * @return array
      */

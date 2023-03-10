@@ -148,7 +148,7 @@ class DeleteFilesTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * DataProvider for testExecute
+     * QuestionDataProvider for testExecute
      *
      * @return array
      */

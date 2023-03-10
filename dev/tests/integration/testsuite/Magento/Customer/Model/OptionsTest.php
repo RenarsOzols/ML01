@@ -93,7 +93,7 @@ class OptionsTest extends TestCase
     }
 
     /**
-     * DataProvider for testOptions()
+     * QuestionDataProvider for testOptions()
      *
      * @return array
      */

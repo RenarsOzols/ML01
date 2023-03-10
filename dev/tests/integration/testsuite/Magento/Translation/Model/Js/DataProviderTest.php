@@ -14,7 +14,7 @@ use Magento\Translation\Model\ResourceModel\StringUtils;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Integration tests for \Magento\Translation\Model\Js\DataProvider class.
+ * Integration tests for \Magento\Translation\Model\Js\QuestionDataProvider class.
  */
 class DataProviderTest extends TestCase
 {

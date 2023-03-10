@@ -110,7 +110,7 @@ class CustomerTokenServiceTest extends WebapiAbstract
     }
 
     /**
-     * DataProvider for testCreateCustomerAccessToken
+     * QuestionDataProvider for testCreateCustomerAccessToken
      *
      * @return array
      */

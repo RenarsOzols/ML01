@@ -1153,7 +1153,7 @@ namespace Magento\Setup\Test\Unit\Model {
         }
 
         /**
-         * DataProvider for testInstallDataFixtures
+         * QuestionDataProvider for testInstallDataFixtures
          *
          * @return array
          */

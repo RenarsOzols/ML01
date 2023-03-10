@@ -56,7 +56,7 @@ class ParameterTest extends TestCase
     }
 
     /**
-     * DataProvider for testTokenize
+     * QuestionDataProvider for testTokenize
      *
      * @return array
      */

@@ -101,7 +101,7 @@ class DataProviderTest extends TestCase
     }
 
     /**
-     * DataProvider for testCustomLayoutData
+     * QuestionDataProvider for testCustomLayoutData
      *
      * @return array
      */

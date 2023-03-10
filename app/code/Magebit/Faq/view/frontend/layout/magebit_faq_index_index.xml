@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Magebit Faq module package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit_AmastyFaq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="1column">
+    <body>
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <referenceBlock name="sidebar.additional" remove="true"/>
+        <referenceContainer name="content" htmlClass="faq_content" htmlTag="div">
+            <container name="mycustompage" htmlTag="div" htmlClass="mycustompage">
+                <block class="Magebit\Faq\Block\QuestionList" name="faq" template="Magebit_Faq::question-list.phtml"/>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
