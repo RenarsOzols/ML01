@@ -1,0 +1,261 @@
+/*
+ * This file is part of the Magebit theme package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit_AmastyFaq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+//
+//  Variables
+//  _____________________________________________
+
+//  Colors
+@color-dark-custom: #333333;
+@color-grey-custom: #F9F9F9;
+
+//
+//   Product reviews summary
+//  _____________________________________________
+
+.product-reviews-summary .reviews-actions {
+    .action.view {
+        color: @color-orange-red1;
+    }
+
+    .action.add {
+        color: @color-dark-custom;
+        font-size: small;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid @color-dark-custom;
+        padding: 5px;
+    }
+}
+
+//
+//  Product price
+//  _____________________________________________
+
+.product-info-main .product-info-price {
+    border: none;
+    display: flex;
+    align-items: center;
+
+    .product-info-stock-sku {
+        padding-left: 20px;
+
+        .stock.available {
+            display: none;
+        }
+    }
+}
+
+//
+//  Product attributes
+//  _____________________________________________
+
+.additional-attributes-wrapper.table-wrapper {
+    margin-bottom: 0;
+    padding: 20px 0px;
+    background-color: @color-grey-custom;
+
+    .table {
+        margin-bottom: 0;
+    }
+}
+
+.col.label {
+    font-weight: bold;
+}
+
+.product-info-main .product.attribute.overview {
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: @color-grey-custom;
+}
+
+//
+//  Quantity
+//  _____________________________________________
+
+.input-group {
+    display: flex;
+    width: 50%;
+
+    input {
+        width: 30%;
+        font-size: 18px;
+        padding: 23px 0px;
+        text-align: center;
+        font-weight: 200;
+    }
+
+    .input-group__addon {
+        button {
+            font-size: 30px;
+            padding: 15px;
+            background: transparent;
+            font-weight: 400;
+
+            .input-group__icon.input-group__icon--increase {
+                color: @color-orange-red1;
+            }
+        }
+    }
+}
+
+//
+//  Add to cart button
+//  _____________________________________________
+
+.action.primary.tocart {
+    &:hover {
+        background-color: @color-orange-red1;
+    }
+
+    width: 100%;
+    background-color: @color-orange-red1;
+    border: @color-orange-red1;
+}
+
+//
+//  Upsell products
+//  _____________________________________________
+
+.block-title.title {
+    border-bottom: 1px solid @color-gray76;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.products.wrapper.grid.products-grid.products-upsell {
+    margin-top: 0;
+
+    .products {
+        margin-top: 0;
+    }
+}
+
+& when (@media-common = true) {
+    .product-item-info.upsell {
+        display: flex;
+        width: 100%;
+
+        &:hover {
+            background: none;
+            box-shadow: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            z-index: 0;
+        }
+    }
+}
+
+.item.product.product-item.upsell {
+    width: 100%;
+
+    .product-item-details {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .product-details-container {
+            padding-left: 15px;
+
+            .product-item-link {
+                font-weight: bold;
+            }
+        }
+
+
+        .action.primary, .action.primary:hover {
+            background-color: @color-dark-custom;
+            border: @color-dark-custom;
+        }
+    }
+
+    .product-reviews-summary {
+        .reviews-actions {
+            .action.add {
+                display: none;
+            }
+        }
+    }
+}
+
+//
+//  Product details
+//  _____________________________________________
+
+.product.info.detailed {
+    height: 0;
+    visibility: hidden;
+}
+
+//
+//  Related products
+//  _____________________________________________
+
+.block.related {
+    margin-bottom: 50px;
+
+    .block-title.title {
+        display: flex;
+        width: 100%;
+
+        #block-related-heading {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+}
+
+.products.list.items.product-items.related {
+    li {
+        width: 18%;
+        margin-right: 20px;
+
+        &:hover {
+            .actions-primary {
+                display: block;
+            }
+        }
+
+        div {
+            width: 100%;
+
+            .product-details-container {
+                strong > a {
+                    font-weight: bold;
+                }
+
+                .product-reviews-summary {
+                    display: flex;
+                    align-items: center;
+
+                    .reviews-actions {
+                        .action.add {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .actions-primary {
+            display: none;
+        }
+    }
+}

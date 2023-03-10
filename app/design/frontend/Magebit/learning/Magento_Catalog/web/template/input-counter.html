@@ -1,0 +1,36 @@
+<!--
+/**
+* This file is part of the Magebit theme package.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade Magebit_AmastyFaq
+* to newer versions in the future.
+*
+* @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+* @author    Magebit <info@magebit.com>
+* @license   MIT
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+-->
+
+<div class="input-group">
+    <span class="input-group__addon">
+        <button click="decreaseQty" class="input-group__button input-group__button--decrease">
+            <span class="input-group__icon input-group__icon--decrease">-</span>
+        </button>
+    </span>
+    <input data-bind="value: qty(), attr: {'data-validate': getDataValidator(), 'title': $t('Qty')}"
+           type="number"
+           name="qty"
+           id="qty"
+           maxlength="12"
+           class="input-group__input" />
+    <span class="input-group__addon">
+        <button click="increaseQty" class="input-group__button input-group__button--increase">
+            <span class="input-group__icon input-group__icon--increase">+</span>
+        </button>
+    </span>
+</div>
