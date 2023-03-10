@@ -35,8 +35,8 @@ class Status implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
-            ['value' => 0, 'label' => __(QuestionInterface::DISABLED_LABEL)],
-            ['value' => 1, 'label' => __(QuestionInterface::ENABLED_LABEL)]
+            ['value' => QuestionInterface::DISABLED, 'label' => __(QuestionInterface::DISABLED_LABEL)],
+            ['value' => QuestionInterface::ENABLED, 'label' => __(QuestionInterface::ENABLED_LABEL)]
         ];
     }
 }
