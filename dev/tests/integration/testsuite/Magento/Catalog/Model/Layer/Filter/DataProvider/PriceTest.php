@@ -14,7 +14,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test class for \Magento\Catalog\Model\Layer\Filter\DataProvider\Price.
+ * Test class for \Magento\Catalog\Model\Layer\Filter\QuestionDataProvider\Price.
  */
 class PriceTest extends TestCase
 {

@@ -119,7 +119,7 @@ return ['arguments' => [
                         'class' => [
                             'name' => 'class',
                             'xsi:type' => 'string',
-                            'value' => 'Magento_Test\\DataProvider',
+                            'value' => 'Magento_Test\\QuestionDataProvider',
                         ],
                         'name' => [
                             'name' => 'name',

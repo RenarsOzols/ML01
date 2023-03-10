@@ -70,7 +70,7 @@ class CsvTest extends TestCase
     }
 
     /**
-     * DataProvider for testDestruct
+     * QuestionDataProvider for testDestruct
      *
      * @return array
      */

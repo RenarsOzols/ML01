@@ -101,7 +101,7 @@ class ResultTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * DataProvider for testEscapeSearchText()
+     * QuestionDataProvider for testEscapeSearchText()
      *
      * @return array
      */

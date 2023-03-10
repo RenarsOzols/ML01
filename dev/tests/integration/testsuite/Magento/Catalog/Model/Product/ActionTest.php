@@ -134,7 +134,7 @@ class ActionTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * DataProvider for testUpdateAttributes
+     * QuestionDataProvider for testUpdateAttributes
      *
      * @return array
      */

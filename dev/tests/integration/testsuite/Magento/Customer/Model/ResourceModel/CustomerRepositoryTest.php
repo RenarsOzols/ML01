@@ -506,7 +506,7 @@ class CustomerRepositoryTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * DataProvider update customer
+     * QuestionDataProvider update customer
      *
      * @return array
      */

@@ -128,7 +128,7 @@ class GeneratorTest extends TestCase
     }
 
     /**
-     * DataProvider for testGenerateClassFactory
+     * QuestionDataProvider for testGenerateClassFactory
      *
      * @return array
      */
@@ -180,7 +180,7 @@ class GeneratorTest extends TestCase
     }
 
     /**
-     * DataProvider for testGenerateClass
+     * QuestionDataProvider for testGenerateClass
      *
      * @return array
      */

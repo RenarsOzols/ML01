@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 use Magento\Framework\Api\Filter;
 
 /**
- * Test for \Magento\Review\Ui\DataProvider\Product\ReviewDataProvider.
+ * Test for \Magento\Review\Ui\QuestionDataProvider\Product\ReviewDataProvider.
  */
 class ReviewDataProviderTest extends TestCase
 {
@@ -85,7 +85,7 @@ class ReviewDataProviderTest extends TestCase
     }
 
     /**
-     * DataProvider for testSorting
+     * QuestionDataProvider for testSorting
      *
      * @return array
      */

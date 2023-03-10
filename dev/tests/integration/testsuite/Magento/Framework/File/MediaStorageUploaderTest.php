@@ -158,7 +158,7 @@ class MediaStorageUploaderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * DataProvider for testUploadFileWhenOldMediaGalleryDisabled
+     * QuestionDataProvider for testUploadFileWhenOldMediaGalleryDisabled
      *
      * @return array
      */

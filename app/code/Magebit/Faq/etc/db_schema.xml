@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Magebit Faq module package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magebit_AmastyFaq
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2023 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="magebit_faq" resource="default" engine="innodb" comment="Magebit FAQ Table">
+        <column xsi:type="smallint" name="id" unsigned="true" nullable="false" identity="true"
+                comment="Faq ID"/>
+        <column xsi:type="text" name="question" nullable="false" comment="Faq Question"/>
+        <column xsi:type="text" name="answer" nullable="false" comment="Faq Answer"/>
+        <column xsi:type="smallint" name="status" unsigned="true" nullable="false" default="0" comment="Faq Status"/>
+        <column xsi:type="int" name="position" unsigned="true" nullable="false" default="0" comment="Faq Position"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" default="CURRENT_TIMESTAMP"
+                comment="Faq Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MAGEBIT_FAQ_QUESTION_ANSWER" indexType="fulltext">
+            <column name="question"/>
+            <column name="answer"/>
+        </index>
+    </table>
+</schema>
