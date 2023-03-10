@@ -19,10 +19,10 @@ declare(strict_types=1);
 
 namespace Magebit\Faq\Block;
 
+use Magebit\Faq\Api\Data\QuestionInterface;
 use Magebit\Faq\Api\QuestionRepositoryInterface;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\Api\SortOrderBuilder;
-use Magento\Framework\Phrase;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 
@@ -54,26 +54,18 @@ class QuestionList extends Template
     }
 
     /**
-     * @return Phrase
-     */
-    public function getTitle(): Phrase
-    {
-        return __('Frequently Asked Questions');
-    }
-
-    /**
      * @return array
      */
     public function getQuestions(): array
     {
         try {
             $sortOrder = $this->sortOrderBuilder
-                ->setField('position')
+                ->setField(QuestionInterface::POSITION)
                 ->setDirection('DESC')
                 ->create();
 
             $searchCriteria = $this->searchCriteriaBuilder
-                ->addFilter('status', 1)
+                ->addFilter(QuestionInterface::STATUS, QuestionInterface::ENABLED)
                 ->addSortOrder($sortOrder)
                 ->create();
 

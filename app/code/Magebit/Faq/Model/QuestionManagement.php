@@ -19,8 +19,9 @@ declare(strict_types=1);
 
 namespace Magebit\Faq\Model;
 
+use Magebit\Faq\Api\Data\QuestionInterface;
 use Magebit\Faq\Api\QuestionManagementInterface;
-use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
+use Magebit\Faq\Api\QuestionRepositoryInterface;
 
 /**
  * Class QuestionManagement
@@ -30,11 +31,13 @@ use Magebit\Faq\Model\ResourceModel\Question\CollectionFactory;
 class QuestionManagement implements QuestionManagementInterface
 {
     /**
-     * @param CollectionFactory $collectionFactory
+     * @param QuestionRepositoryInterface $questionRepository
      */
     public function __construct(
-        private CollectionFactory $collectionFactory,
-    ) {}
+        private QuestionRepositoryInterface $questionRepository,
+    )
+    {
+    }
 
     /**
      * Enable question
@@ -44,7 +47,7 @@ class QuestionManagement implements QuestionManagementInterface
      */
     public function enableQuestion(int $questionId): bool
     {
-        return $this->changeQuestionStatus($questionId, 1);
+        return $this->changeQuestionStatus($questionId, QuestionInterface::ENABLED);
     }
 
     /**
@@ -55,7 +58,7 @@ class QuestionManagement implements QuestionManagementInterface
      */
     public function disableQuestion(int $questionId): bool
     {
-        return $this->changeQuestionStatus($questionId, 0);
+        return $this->changeQuestionStatus($questionId, QuestionInterface::DISABLED);
     }
 
     /**
@@ -67,15 +70,19 @@ class QuestionManagement implements QuestionManagementInterface
      */
     protected function changeQuestionStatus(int $questionId, int $status): bool
     {
-        $question = $this->collectionFactory->create()
-            ->addFieldToFilter('id', $questionId)
-            ->getFirstItem();
-        if (!$question->getId()) {
+        try {
+            $question = $this->questionRepository->get($questionId);
+        } catch (\Exception $e) {
             return false;
         }
 
-        $question->setStatus($status)->save();
+        $question->setStatus($status);
 
+        try {
+            $this->questionRepository->save($question);
+        } catch (\Exception $e) {
+            return false;
+        }
         return true;
     }
 }

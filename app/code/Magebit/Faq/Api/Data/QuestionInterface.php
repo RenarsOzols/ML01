@@ -32,6 +32,10 @@ interface QuestionInterface
     const QUESTION = 'question';
     const ANSWER = 'answer';
     const STATUS = 'status';
+    const ENABLED = 1;
+    const DISABLED = 0;
+    const ENABLED_LABEL = 'Enabled';
+    const DISABLED_LABEL = 'Disabled';
     const POSITION = 'position';
     const UPDATED_AT = 'updated_at';
     /**

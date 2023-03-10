@@ -25,7 +25,7 @@ use Magebit\Faq\Block\QuestionList;
 
 ?>
 <div class="faq-wrapper">
-    <h1 class="faq-title"><?= $block->getTitle() ?></h1>
+    <h1 class="faq-title"><?= __('Frequently Asked Questions'); ?></h1>
     <?php if ($block->getQuestions()): ?>
         <div class="faq-list" id="faq-list">
             <?php foreach ($block->getQuestions() as $question): ?>
